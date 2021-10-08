@@ -1,25 +1,30 @@
-const actionAdd = prompt("+");
-const actionSub = prompt("-");
-const actionMult = prompt("*");
-const actionDiv = prompt("/");
+const userChoise = prompt("Выберите действие(add,sub,mult,div)");
 
+const num1 = +prompt("выберите число");
+const num2 = +prompt("выберите число");
 
-let num1 = prompt("введите первое число");
-let num2 = prompt("введите второе число");
+let result;
 
-let result = +num1 + +num2;
-console.log(num1,`+`,num2,`=`,result)
-alert(`Результат сложения ${+num1 + +num2}`);
-
-let result2 = num1 - num2;
-console.log(num1,`-`,num2,`=`,result2)
-alert(`Результат отнимания ${num1 - num2}`);
-
-let result3 = num1 * num2;
-console.log(num1,`*`,num2,`=`,result3)
-alert(`Результат умножения ${num1 * num2}`);
-
-
-let result4 = num1 / num2;
-console.log(num1,`/`,num2,`=`,result4)
-alert(`Результат деления ${num1 / num2}`);
+if (!isNaN(num1) || !isNaN(num2)) {
+  
+  if (userChoise === "add") {
+    result = num1 + num2;
+    alert(`${num1} + ${num2} = ${result}`);
+    console.log (`${num1} + ${num2} = ${result}`)
+  } else if (userChoise === "sub") {
+    result = num1 - num2;
+    alert(`${num1} - ${num2} = ${result}`);
+    console.log (`${num1} - ${num2} = ${result}`)
+  } else if (userChoise === "mult") {
+    result = num1 * num2;
+    alert(`${num1} * ${num2} = ${result}`);
+    console.log (`${num1} * ${num2} = ${result}`)
+  } else if (userChoise === "div") {
+    result = num1 / num2;
+    alert(`${num1} / ${num2} = ${result}`);
+    console.log (`${num1} / ${num2} = ${result}`)
+  }
+ 
+} else {
+  alert('неверно указано значение');
+}
